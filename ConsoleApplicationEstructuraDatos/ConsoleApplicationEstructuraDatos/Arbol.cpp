@@ -31,3 +31,16 @@ Nodo* insertarNodo(Nodo* raiz, int valor) {
 
 	
 }
+
+
+void inorden(Nodo* raiz) {
+	if (raiz != nullptr) {
+		inorden(raiz->izquierdo); //recorremos el subarbol izquierdo
+		std::cout << raiz->dato << " "; //imprimimos el dato de la raiz
+		inorden(raiz->derecho); //recorremos el subarbol derecho
+	}
+}
+//
+//void preorden(Nodo* raiz); al inicio izquiera --- derecha
+//
+//void postorden(Nodo* raiz); izquierda --- derecha al final

@@ -15,10 +15,20 @@
 //
 //El objetivo es que el estudiante comprenda cómo se construye y recorre un árbol binario sin balance automático.
 #include <iostream>
+#include "Arbol.h"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Nodo* raiz = nullptr; //inicializamos la raiz del arbol como nula
+    int opcion;
+	int valor;
+
+    std::cout << "Arbol!\n";
+	/*while*/
+
+	raiz = insertarNodo(raiz, 5); //insertamos el valor 5 en el arbol
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

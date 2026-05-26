@@ -13,3 +13,10 @@ struct Nodo
 Nodo* crearNodo(int valor);
 
 Nodo* insertarNodo(Nodo* raiz, int valor);
+
+void inorden(Nodo* raiz);
+// recordando la recursividad
+//
+//void preorden(Nodo* raiz);
+//
+//void postorden(Nodo* raiz);
