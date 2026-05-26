@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arbol.cpp" />
     <ClCompile Include="ConsoleApplicationEstructuraDatos.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Arbol.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
