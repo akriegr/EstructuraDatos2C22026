@@ -14,6 +14,7 @@
 //Visualizar los datos almacenados en orden creciente al elegir el recorrido inorden.
 //
 //El objetivo es que el estudiante comprenda cómo se construye y recorre un árbol binario sin balance automático.
+
 #include <iostream>
 #include "Arbol.h"
 using namespace std;
@@ -22,24 +23,60 @@ using namespace std;
 int main()
 {
 	Nodo* raiz = nullptr; //inicializamos la raiz del arbol como nula
-    int opcion;
+    int opcion = 0;
 	int valor;
 
-    cout << "Arbol!\n";
-	while (opcion != 3) {
-		cout << "****MENU DE OPCIONES****";
-		cout << "1. Insertar Dato";
+	while (opcion != 5) {
+		system("cls");
+		cout << "\n****MENU DE OPCIONES****\n";
+		cout << "1. Insertar Dato\n";
+		cout << "2. Imprimir Inorder\n";
+		cout << "3. Imprimir Preorden\n";
+		cout << "4. Imprimir Postorden\n";
+		cout << "5. Salir\n";
+		cin >> opcion;
 
 		switch (opcion) 
 		{
 		case 1:
-
-		break;
+			system("cls");
+			cout << "\nDigite el dato que desea insertar\n";
+			cin >> valor;
+			raiz = insertarNodo(raiz,valor);
+			cout << "\nDato " << valor << " insertado!\n";
+			system("pause");
+			break;
+		case 2:
+			system("cls");
+			cout << "\nImprimir Inorder\n";
+			inorden(raiz);
+			cout << "\n";
+			system("pause");
+			break;
+		case 3:
+			system("cls");
+			cout << "\nImprimir Preorden\n";
+			preorden(raiz);
+			cout << "\n";
+			system("pause");
+			break;
+		case 4:
+			system("cls");
+			cout << "\nImprimir Postorden\n";
+			postorden(raiz);
+			cout << "\n";
+			system("pause");
+			break;
+		case 5:
+			cout << "Saliendo del programa";
+			break;
+		default:
+			cout << "Opcion Invalida";
+			break;
 		}
-
 	};
 
-	raiz = insertarNodo(raiz, 5); //insertamos el valor 5 en el arbol
+	//raiz = insertarNodo(raiz, 5); //insertamos el valor 5 en el arbol
 
 }
 

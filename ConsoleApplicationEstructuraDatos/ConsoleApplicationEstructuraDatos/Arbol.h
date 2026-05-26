@@ -18,5 +18,7 @@ void inorden(Nodo* raiz);
 // recordando la recursividad
 //
 //void preorden(Nodo* raiz);
+void preorden(Nodo* raiz);
 //
 //void postorden(Nodo* raiz);
+void postorden(Nodo* raiz);

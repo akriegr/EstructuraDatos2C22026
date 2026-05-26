@@ -26,13 +26,14 @@ Nodo* insertarNodo(Nodo* raiz, int valor) {
 	else if (valor > raiz->dato) {
 		raiz->derecho = insertarNodo(raiz->derecho, valor); //si el valor es mayor que el dato de la raiz, insertamos en el subarbol derecho
 	}
-
 	return raiz; //retornamos la raiz del arbol
-
-	
 }
 
 
+//ABA 
+//los valores del subarbol izquierdo son menores que el nodo  (raiz) y los valores del subarbol deerecho son mayores que el valor del nodo (raiz)
+
+//inorden, orden ascendente
 void inorden(Nodo* raiz) {
 	if (raiz != nullptr) {
 		inorden(raiz->izquierdo); //recorremos el subarbol izquierdo
@@ -41,6 +42,20 @@ void inorden(Nodo* raiz) {
 	}
 }
 //
-//void preorden(Nodo* raiz); al inicio izquiera --- derecha
+//void preorden(Nodo* raiz); al inicio izquiera --- derecha orden descendente
+void preorden(Nodo* raiz) {
+	if (raiz != nullptr) {
+		preorden(raiz->derecho);
+		std::cout << raiz->dato << " "; // imprimo el dato de la raiz
+		preorden(raiz->izquierdo);
+	}
+}
 //
-//void postorden(Nodo* raiz); izquierda --- derecha al final
+//void postorden(Nodo* raiz); izquierda --- derecha orden de abajo hacia arriba
+void postorden(Nodo* raiz) {
+	if (raiz != nullptr) {
+		postorden(raiz->izquierdo);
+		postorden(raiz->derecho);
+		std::cout << raiz->dato << " "; // imprimo el dato de la raiz
+	}
+}
