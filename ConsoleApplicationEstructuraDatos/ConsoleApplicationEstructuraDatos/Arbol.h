@@ -10,40 +10,13 @@ struct Nodo
 
 
 //Nosotros creamos las funciones que necesitamos equivalente a las interfaz
-Nodo* crearNodo(int valor) {
+Nodo* crearNodo(int valor);
 
-	Nodo* nuevo = new Nodo(); //reservamos memoria para el nodo
+Nodo* insertarNodo(Nodo* raiz, int valor);
 
-	nuevo->dato = valor; //asignamos el valor al nodo
-	nuevo->izquierdo = nullptr; //inicializamos el puntero izquierdo
-	nuevo->derecho = nullptr; //inicializamos el puntero derecho
-
-	return nuevo; //retornamos el nodo creado
-}
-Nodo* insertarNodo(Nodo* raiz, int valor) {
-	if (raiz == nullptr) { //si la raiz es nula, significa que el arbol esta vacio
-		return crearNodo(valor); //creamos un nuevo nodo con el valor y lo retornamos
-	}
-	//raiz = 6   dato 3
-	if (valor < raiz->dato) {
-		raiz->izquierdo = insertarNodo(raiz->izquierdo, valor); //si el valor es menor que el dato de la raiz, insertamos en el subarbol izquierdo
-
-	}
-	else if (valor > raiz->dato) {
-		raiz->derecho = insertarNodo(raiz->derecho, valor); //si el valor es mayor que el dato de la raiz, insertamos en el subarbol derecho
-	}
-	return raiz; //retornamos la raiz del arbol
-}
-
-void inorden(Nodo* raiz) {
-	if (raiz != nullptr) {
-		inorden(raiz->izquierdo); // recorremos el subarbol izquierdo
-		std::cout << raiz->dato << ""; //imprimos el dato de la raiz
-		inorden(raiz->derecho); // recorremos el subarbol derecho
-	}
-}
+void inorden(Nodo* raiz);
 // recordando la recursividad
-
+//
 //void preorden(Nodo* raiz);
 //
 //void postorden(Nodo* raiz);
